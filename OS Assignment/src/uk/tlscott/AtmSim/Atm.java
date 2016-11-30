@@ -23,11 +23,8 @@ public class Atm {
 
 	static final String ARGUMENTS_MUST_BE_NUMBERS = "Arguments must be numbers.";
 	static final String USAGE_MESSAGE = "USAGE: Atm number_of_cards balance";
-
-	private static Thread[] cards;
 	
 	public static void main(String[] args) {
-		
 		// Verify and store arguments
 		int[] verifiedArgs = verifyArguments(args);
 		
@@ -36,7 +33,7 @@ public class Atm {
 		
 		// create account and Thread array
 		Account account = new Account(initialBalance);
-		cards = new Thread[numberOfCards];
+		Thread[] cards = new Thread[numberOfCards];
 		
 		// fill the thread array and start the threads
 		for (int i = 0; i < cards.length; i++) {
